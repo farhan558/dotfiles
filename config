@@ -1,0 +1,76 @@
+{
+    "layer": "top",
+    "modules-left": ["wlr/workspaces"],
+    "modules-center": ["clock"],
+    "width": 1355,
+    "margin-left": 5,
+    "margin-right": 5,
+    "margin-top": 5,
+    "modules-right": ["custom/pacman","backlight","pulseaudio","upower","tray"],
+    
+    "wlr/workspaces": {
+     "format": "",
+     "on-scroll-up": "hyprctl dispatch workspace e-1",
+     "on-scroll-down": "hyprctl dispatch workspace e+1",
+     "on-click": "activate"
+    },
+    
+    "hyprland/window": {
+        "format": "👉 {}",
+        "rewrite": {
+            "(.*) - Mozilla Firefox": "🌎 $1",
+            "(.*) - fish": "> [$1]"
+        },
+        "separate-outputs": true
+    },
+    
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "<span color=\"#f9e2af\">{icon}</span> {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "tooltip": false,
+    },
+
+    "upower": {
+        "icon-size": 13,
+        "hide-if-empty": true,
+        "tooltip": true,
+        "tooltip-spacing": 20
+    },
+    
+    "pulseaudio": {
+        "format": "<span color=\"#89b4fa\">{icon}</span> {volume}%",
+        "format-bluetooth": "<span color=\"#89b4fa\">{icon}</span> {volume}%",
+        "format-muted": "Muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+    
+    "tray": {
+    "icon-size": 13,
+    "spacing": 7
+    },
+    
+    "custom/pacman": {
+        "format": "<span color=\"#94e2d5\">󰊠</span> {}",
+        "interval": 3600,                     // every hour
+        "exec": "checkupdates | wc -l",       // # of updates
+        "exec-if": "exit 0",                  // always run; consider advanced run conditions
+        "signal": 8,
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:<span color=\"#a6e3a1\">󰃭</span> %a, %d-%B-%y  <span color=\"#89b4fa\"></span> %I:%M %p}"
+    }
+}
