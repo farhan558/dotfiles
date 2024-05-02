@@ -1,0 +1,19 @@
+@define-color base        #000000;
+@define-color opacity     rgba(0, 0, 0, 0.7);
+@define-color surface     rgba(255, 255, 255, 0.5);
+@define-color background  rgba(0, 0, 0, 0.5);
+@define-color text        #ffffff;
+
+
+@define-color blue       #89b4fa;
+@define-color lavender   #b4befe;
+@define-color sapphire   #74c7ec;
+@define-color sky        #89dceb;
+@define-color teal       #94e2d5;
+@define-color green      #a6e3a1;
+@define-color yellow     #f9e2af;
+@define-color orange     #fab387;
+@define-color maroon     #eba0ac;
+@define-color red        #f38ba8;
+@define-color purple     #cba6f7;
+

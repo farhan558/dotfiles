@@ -1,0 +1,18 @@
+#!/bin/sh
+
+down() {
+light -U 10
+brightness=$(light g)
+notify-send -a "BRIGHTNESS" "Decreasing to $brightness%" -h int:value:"$brightness" -h string:x-canonical-private-synchronous:brightness -i display-brightness-symbolic -r 2593 -u normal
+}
+
+up() {
+light -A 10
+brightness=$(light g)
+notify-send -a "BRIGHTNESS" "Increasing to $brightness%" -h int:value:"$brightness" -h string:x-canonical-private-synchronous:brightness -i display-brightness-symbolic -r 2593 -u normal
+}
+
+case "$1" in
+  up) up;;
+  down) down;;
+esac

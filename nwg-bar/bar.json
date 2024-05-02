@@ -1,0 +1,19 @@
+[
+  {
+    "exec": "systemctl suspend",
+    "icon": "/home/farhan/.config/nwg-bar/icons/suspend.svg"
+  },
+  {
+    "exec": "hyprctl dispatch exit",
+    "icon": "/home/farhan/.config/nwg-bar/icons/logout.svg"
+  },
+
+  {
+    "exec": "systemctl reboot",
+    "icon": "/home/farhan/.config/nwg-bar/icons/reboot.svg"
+  },
+  {
+    "exec": "systemctl -i poweroff",
+    "icon": "/home/farhan/.config/nwg-bar/icons/power.svg"
+  }
+]

@@ -1,0 +1,108 @@
+{
+    "layer": "top",
+    "position": "top",
+    
+    // Module Position
+    "modules-left": ["hyprland/workspaces","hyprland/submap","hyprland/window"],
+    "modules-center": ["clock","custom/power"],    
+    "modules-right": ["mpris","custom/pacman","upower","tray"],
+
+    "width": 1050,
+    "height": 30,
+
+    // Margin
+    "margin-top": 5,
+    "margin-bottom": 0,
+    "margin-left": 5,
+    "margin-right": 5,
+    
+        
+    // Hyprland
+    "hyprland/submap": {
+       "format": "{}",
+       "max-length": 8,
+       "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+	  "format": "{icon}",
+	  "format-icons": {
+		"1": "1",
+		"2": "2",
+		"3": "3",
+		"4": "4",
+		"5": "5"
+	  },
+       "persistent-workspaces": {
+             "*": 5
+       }
+    },
+    
+    "hyprland/window": {
+        "format": "{initialTitle}",
+        "rewrite": {
+            "Mozilla Firefox": "Firefox",
+            "(.*) - Mozilla Firefox": "🌎 $1",
+            "(.*) - fish": "> [$1]"
+        },
+        "separate-outputs": true
+    },
+    
+    
+    // Built-in Modules
+    "clock": {
+        "format": "{:%a, %d-%b   %I:%M %p}",
+        "on-click": "gnome-calendar"
+    },
+    
+    "upower": {
+        "icon-size": 13,
+        "hide-if-empty": true,
+        "tooltip": true,
+        "tooltip-spacing": 20
+    },
+    
+    "tray": {
+    "icon-size": 14,
+    "spacing": 7,
+    "reverse-direction": true
+    },
+
+    "mpris": {
+        "player": "spotify",
+	      "format": "{player_icon}  {title}",
+	      "format-paused": "<span color=\"#94e2d5\">{player_icon}</span>  {title}",
+	      "player-icons": {
+		    "default": ""
+	   },
+	       "status-icons": {
+		     "paused": ""
+	   },
+	       "max-length": 20,
+	       "tooltip-format": "{artist}"
+    },
+    
+
+    // Custom Modules
+    "custom/pacman": {
+        "format": "󰊠  {}",
+        "interval": 3600,                   
+        "exec": "checkupdates | wc -l",     
+        "exec-if": "exit 0",
+	    "on-click": "kitty --class update yay; pkill -SIGRTMIN+8 waybar",
+        "signal": 8,
+        "tooltip": false
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "nwg-bar -p top -mt 45 -i 42",
+        "tooltip": false
+    },
+
+    "custom/menu": {
+        "format": "",
+        "on-click": "pkill wofi || wofi --show-drun",
+        "tooltip": false
+    }
+}
