@@ -1,0 +1,53 @@
+#pkgs
+
+--essentials
+ -xdg-user-dirs
+ -git
+ -neovim
+ -ufw
+ -pacman-contrib
+ -bluez
+ -bluez-utils
+ -noto-fonts
+ -firefox
+ -kitty
+ -fish
+ -starship
+ -nushell
+ -nemo
+ -file-roller
+ -blueman
+ -pavucontrol
+ -htop
+
+--osd
+ -avizo
+ -brightnessctl
+ -pamixer
+
+--hyprland
+ -hyprland-git
+ -hyprlock-git
+ -hypridle-git
+ -hyprpolkitagent
+ -hyprpicker-git
+
+--wallpaper
+ -swww
+ -waypaper
+
+--screenshot
+--clipboard
+ -swappy
+ -grimblast
+ -wl-clipboard
+ -cliphist
+
+--bar
+ -waybar
+
+--launcher
+ -rofi-wayland
+
+--notification
+ -dunst

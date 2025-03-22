@@ -1,0 +1,19 @@
+@define-color opacity     rgba(0, 0, 0, 0.4);
+@define-color surface     rgba(25, 25, 25, 0.6);
+@define-color sel #3C3C3C;
+@define-color highlight #E0E0E0;
+@define-color transparent rgba(15, 15, 15, 0.8);
+@define-color ice rgba(255, 255, 255, 0.1);
+@define-color select #1a1a1a;
+@define-color border #111;
+
+@define-color base #0F0F0F;
+@define-color black #0a0a0a;
+@define-color purple #a277ff;
+@define-color white #E0E0E0;
+@define-color gray  #6d6d6d;
+@define-color red   #ff6767;
+@define-color green #61ffca;
+@define-color blue  #82e2ff;
+@define-color orange #ffca85;
+@define-color black #0a0a0a;

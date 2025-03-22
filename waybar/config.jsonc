@@ -1,0 +1,155 @@
+{
+  "layer": "top",
+  "reload_style_on_change": true,
+  "fixed-center": false,
+
+  "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+  "modules-center": [],
+  "modules-right": [
+    "mpris",
+    "custom/pacman",
+    "upower",
+    "clock",
+    "custom/dunst",
+  ],
+
+  // Margin
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+
+  // Hyprland
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "persistent-workspaces": {
+      "*": 5,
+    },
+  },
+  "hyprland/submap": {
+    "format": "{}",
+    "max-length": 8,
+    "tooltip": false,
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "Mozilla Firefox",
+      "": "Desktop",
+    },
+    "icon": false,
+    "icon-size": 16,
+    "separate-outputs": true,
+  },
+
+  // Clock
+  "clock": {
+    "format": "{:%a, %d/%m\n%I:%M %p}",
+    "justify": "right",
+    "on-click": "gnome-calendar",
+    "tooltip": false,
+  },
+
+  // Battery
+  "upower": {
+    "icon-size": 16,
+    "format": "<span size='large' rise='-0.5pt'></span> {percentage}",
+    "hide-if-empty": true,
+    "tooltip": false,
+    "show-icon": false,
+  },
+
+  // Updates
+  "custom/pacman": {
+    "format": "<span size='large' rise='-0.5pt'>󰊠</span>  {}",
+    "interval": 3600,
+    "exec": "checkupdates | wc -l",
+    "exec-if": "exit 0",
+    "on-click": "pkill -SIGRTMIN+8 waybar",
+    "signal": 8,
+    "tooltip": false,
+  },
+
+  // Media
+  "mpris": {
+    "player": "spotify",
+    "format": "<span size='x-large' rise='-2pt'>{player_icon}</span> {title}",
+    "format-paused": "<span size='x-large' rise='-2pt' color=\"#00FFA1\">{player_icon}</span> {title}",
+    "player-icons": {
+      "default": "󰎇",
+    },
+    "max-length": 20,
+    "tooltip-format": "{title}\n{artist}",
+  },
+
+  // Misc
+  "custom/lines": {
+    "format": "",
+    "tooltip": false,
+    "escape": true,
+  },
+
+  // Apps
+  "custom/apps": {
+    "format": "<span size='large'></span>",
+    "tooltip": false,
+    "on-click": "pkill rofi || rofi -show drun -sidebar-mode",
+    "escape": true,
+  },
+
+  "custom/power": {
+    "format": "<span size='x-large'>⏻</span>",
+    "tooltip": false,
+    "on-click": "poweroff",
+    "escape": true,
+  },
+
+  // overtray
+  "group/overtray": {
+    "orientation": "inherit",
+    "drawer": {
+      "click-to-reveal": true,
+      "transition-duration": 500,
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "custom/icon",
+      "tray",
+      "idle_inhibitor",
+      "custom/screenshot",
+      "custom/color",
+    ],
+  },
+  "custom/icon": {
+    "format": "",
+    "tooltip": false,
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 7,
+    "reverse-direction": true,
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": "",
+    },
+  },
+  "custom/screenshot": {
+    "format": "󰄄",
+    "tooltip": false,
+    "on-click": "~/.config/hypr/screenshot s",
+  },
+  "custom/color": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "hyprpicker -a",
+  },
+  "custom/dunst": {
+    "exec": "~/.config/waybar/dunst.sh",
+    "on-click": "dunstctl set-paused toggle",
+    "restart-interval": 1,
+    "tooltip": false,
+  },
+}

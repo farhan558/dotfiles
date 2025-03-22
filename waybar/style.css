@@ -1,0 +1,233 @@
+@import "colors.css";
+
+* {
+    font-family: "Rubik", "monospace";
+    font-size: 9.5pt;
+    font-weight: 500;
+    border-radius: 6px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: @transparent;
+    border-radius: 0px;
+    border-bottom: 1px solid @ice;
+}
+
+.modules-left {
+}
+.module-center {
+}
+.modules-right {
+}
+
+/* Workspace */
+
+#workspaces {
+    padding: 1px;
+
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    /* background: @surface; */
+}
+#workspaces button {
+    padding: 2px 3px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    /* transition: none; */
+}
+#workspaces button label {
+    font-size: 10pt;
+    font-weight: 700;
+    /* margin-left: 0.1px; */
+}
+#workspaces button:hover {
+    background: @sel;
+    color: @white;
+}
+#workspaces button.active {
+    /* background: @green; */
+    background: @ice;
+    border: 1px solid @ice;
+}
+#workspaces button.active label {
+    color: @white;
+    font-weight: 800;
+}
+#workspaces button.empty {
+    color: @gray;
+}
+
+/* --Modules-right */
+
+/* clock */
+#clock {
+    margin: 0px 5px;
+    font-size: 9pt;
+    font-weight: 700;
+}
+#clock:hover {
+    color: @gray;
+}
+
+/* battery */
+#upower {
+    color: @green;
+    padding: 0px 5px;
+    margin: 5px 2px 5px 0px;
+}
+#upower:hover {
+    background: @green;
+    color: @black;
+}
+#upower.charging {
+    background: @green;
+    color: @black;
+}
+
+/* updates */
+#custom-pacman {
+    color: @blue;
+    margin: 5px 5px 5px 5px;
+    padding: 0px 5px;
+}
+#custom-pacman:hover {
+    background: @blue;
+    color: @black;
+}
+
+/* mpris */
+#mpris {
+    background: @surface;
+    padding: 0px 6px;
+    margin: 5px 0px 5px 5px;
+}
+#mpris.paused {
+    background: @surface;
+    /* border: 1px solid rgba(255, 255, 255, 0.1); */
+}
+#mpris.playing {
+    background: #00ffa1;
+    color: @black;
+}
+
+#overtray {
+    background: @surface;
+    margin: 5px 5px 5px 0px;
+}
+
+#custom-icon {
+    color: @green;
+    font-size: 16pt;
+    margin-right: 10px;
+    margin-left: 8px;
+}
+
+#idle_inhibitor {
+    font-size: 16pt;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: @white;
+}
+#idle_inhibitor:hover {
+    color: @green;
+}
+
+#custom-screenshot {
+    font-size: 14pt;
+    margin-right: 5px;
+    margin-left: 10px;
+    color: @white;
+}
+#custom-screenshot:hover {
+    color: @green;
+}
+
+#custom-color {
+    font-size: 13pt;
+    margin-right: 6px;
+    margin-left: 10px;
+    color: @white;
+}
+#custom-color:hover {
+    color: @green;
+}
+
+#tray {
+    margin: 3px 3px 3px 3px;
+    background: @base;
+    padding: 2px 4px;
+}
+
+/* Modules-right-- */
+
+/* --Modules-left */
+#custom-apps {
+    color: @green;
+    font-size: 13pt;
+
+    margin-left: 5px;
+    margin-right: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    padding: 0px 5px;
+}
+#custom-apps:hover {
+    color: @surface;
+}
+
+#custom-power {
+    color: @red;
+    font-size: 9.5pt;
+
+    margin-left: 5px;
+    margin-right: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    padding: 0px 5px;
+}
+#custom-power:hover {
+    color: @sel;
+}
+
+#submap {
+    font-size: 16pt;
+    color: @green;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+#window {
+    font-weight: 600;
+    background: @surface;
+    color: @text;
+    padding: 0px 8px;
+
+    margin-left: 0px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Modules-left-- */
+
+#custom-lines {
+    font-size: 20pt;
+    color: @blue;
+    margin: 0px 5px 0px 0px;
+}
+
+#custom-dunst {
+    font-size: 13.5pt;
+    color: @white;
+    margin: 0px 18px 0px 5px;
+}
+#custom-dunst:hover {
+    color: @sel;
+}
